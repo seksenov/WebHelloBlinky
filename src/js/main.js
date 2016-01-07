@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
+	document.getElementById("reload").addEventListener("click",reload);
 })
 
 var gpioController = Windows.Devices.Gpio.GpioController.getDefault();
@@ -20,4 +21,8 @@ function flipLed(){
     }
     pin.write(currentValue);
     //setTimeout(flipLed, 500);
+}
+
+function reload() {
+	document.location.reload(true);
 }
