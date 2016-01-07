@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 var gpioController = Windows.Devices.Gpio.GpioController.getDefault();
-var pin = gpioController.openPin(5);
+var pin = gpioController.openPin(47);
 var currentValue = Windows.Devices.Gpio.GpioPinValue.high;
 pin.write(currentValue);
 pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
