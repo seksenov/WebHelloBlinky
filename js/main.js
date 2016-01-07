@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
+	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
 })
 
@@ -9,6 +10,7 @@ var pin = gpioController.openPin(47);
 var currentValue = Windows.Devices.Gpio.GpioPinValue.high;
 pin.write(currentValue);
 pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
+var timed = false;
 
 function flipLed(){
 	console.log("Flip Led Invoked, Current Value: " + currentValue);
@@ -20,7 +22,19 @@ function flipLed(){
         currentValue = Windows.Devices.Gpio.GpioPinValue.high;
     }
     pin.write(currentValue);
-    //setTimeout(flipLed, 500);
+    if(timed) {
+    	setTimeout(flipLed, 500);
+    }
+}
+
+function setBlinkTime() {
+	if (timed) {
+		timed = false;
+	}
+	else {
+		timed = true;
+		flipLed();
+	}
 }
 
 function reload() {
