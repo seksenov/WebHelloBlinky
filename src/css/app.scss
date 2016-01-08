@@ -1,20 +1,37 @@
 body {
     background-color: #2c3e50;
+    font-family: 'Segoe UI Light', 'HelveticaNeue-UltraLight', 'Helvetica Neue Ultra Light', sans-serif;
+    color: #FFF;
 }
 
 h1 {
 	text-align: center;
-	font-family: 'Segoe UI', Helvetica;
-	color: #3177BC;
+	font-weight: 100;
+	font-size: 48px;
 }
 
-.content {
-	text-align: center;	
+#logo {
+	text-align: center;
 }
 
-.button {
-    position: absolute;
-    top: 50%;
+#edgeLogo {
+	width: 200px;
+}
+
+#buttons {
+	height: 100px;
+	text-align: center;
+	margin-top: 22px;
+	margin-left: 62px;
+}
+
+#buttons div {
+	display: inline-block;
+	width: 124px;
+	height: 44px;
+	text-align: center;
+	margin-top: 42px;
+	margin-left: 62px;
 }
 
 .myImage {
@@ -22,7 +39,49 @@ h1 {
     filter: alpha(opacity=40); /* msie */
 }
 
-#slider {
+#range {
+	width: 100%;
 	text-align: center;
+}
+
+#range p {
+	font-size: 22px;
+}
+
+#slider {
 	width: 50%;
+	margin: 0 auto;
+}
+
+.button {
+	display: block;
+	font-size: 22px;
+	text-align: center;
+	line-height: 44px;
+	font-family: 'Segoe UI Light', 'HelveticaNeue-UltraLight', 'Helvetica Neue Ultra Light', sans-serif;
+	text-decoration: none;
+	color: white;
+	background-color: #CC4331;
+	border-radius: 4px;
+	border: 0;
+	position: absolute;
+	outline: none;
+	width: 124px;
+	height: 44px;
+	margin-top: -22px;
+	margin-left: -62px;
+	text-shadow: 0 -1px -1px #af3a2a;
+	box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+	transition: all 0.05s ease-in-out;
+}
+
+.button:hover {
+	background-color: #d25544;
+	text-shadow: 0 -1px -1px #c4402f;
+	box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+.button:active {
+	margin-top: -18px;
+	box-shadow: none;
 }

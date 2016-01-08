@@ -8,20 +8,20 @@
   </head>
   <body>
     <h1>Hello Blinky Web App</h1>
-    <div id="content" class="content">
-      <img id="edgeLogo" src="img/Microsoft_Edge_logo.svg">
-
-      <div class="content">
-        <button id="blinkB" class="button">Blink</button>
+    <div id="content">
+      <div id="logo">
+        <img id="edgeLogo" src="img/Microsoft_Edge_logo.svg">
       </div>
-      <div class="content">
-        <button id="bkinkT" class="button">Blink Continuosly</button>
+      <div id="buttons">
+        <div><button id="blinkB" class="button">Toggle</button></div>
+        <div><button id="bkinkT" class="button">Blink</button></div>
+        <div><button id="reload" class="button">Reload</button></div>
       </div>
-      <div class="content">
-         <button id="reload" class="button">Reload</button>     
-      </div>    
     </div>
-    <div id="slider"></div>
+    <div id="range">
+      <p>Blink frequency:</p>
+      <div id="slider"></div>
+    </div>
     <script src="js/main.js"></script>
     <script src="bundles/bundle.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
