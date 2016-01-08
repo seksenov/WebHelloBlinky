@@ -16,6 +16,7 @@ function flipLed(){
 	console.log("Flip Led Invoked, Current Value: " + currentValue);
     if (currentValue == Windows.Devices.Gpio.GpioPinValue.high) {
         console.log("setting pin value low");
+        //document.getElementById("edgeLogo").removeClass();
         currentValue = Windows.Devices.Gpio.GpioPinValue.low;
     } else {
     	console.log("Setting value to high");

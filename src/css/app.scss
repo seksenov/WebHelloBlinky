@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+	text-align: center;
+}
+
+.content {
+	text-align: center;	
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.myImage {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}
