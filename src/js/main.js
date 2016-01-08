@@ -13,6 +13,7 @@ pin.write(currentValue);
 pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
 var timed = false;
 var blinkInterval = 500;
+var timeout;
 //var val = $('#slider').slider("option", "value");
 
 function flipLed(){
@@ -30,7 +31,10 @@ function flipLed(){
     if(timed) {
     	var multiplier = 1 - $('#slider').slider("option", "value") / 100;
     	var frequency = blinkInterval * multiplier;
-    	setTimeout(flipLed, frequency);
+    	if (timeout) {
+    		clearTimeout(timeout);
+    	}
+    	timeout = setTimeout(flipLed, frequency);
     }
 }
 
