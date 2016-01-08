@@ -28,7 +28,9 @@ function flipLed(){
     }
     pin.write(currentValue);
     if(timed) {
-    	setTimeout(flipLed, blinkInterval * (100 - $('#slider').slider("option", "value")));
+    	var multiplier = 1 - $('#slider').slider("option", "value") / 100;
+    	var frequency = blinkInterval * multiplier;
+    	setTimeout(flipLed, frequency);
     }
 }
 
