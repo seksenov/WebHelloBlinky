@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
 	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
+    document.getElementById("homeLogo").addEventListener("click",goHome);
 	$( "#slider" ).slider();
 })
 
@@ -15,6 +16,11 @@ var timed = false;
 var blinkInterval = 500;
 var timeout;
 //var val = $('#slider').slider("option", "value");
+
+function goHome() {
+    console.log("GoHome");
+    window.location.href = "webonpi:home";
+}
 
 function flipLed(){
 	console.log("Flip Led Invoked, Current Value: " + currentValue);
