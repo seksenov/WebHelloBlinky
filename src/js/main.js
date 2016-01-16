@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
 	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
-    document.getElementById("homeLogo").addEventListener("click",goHome);
+    document.getElementById("web-on-pi-home").addEventListener("click",goHome);
 	$( "#slider" ).slider();
 })
 
