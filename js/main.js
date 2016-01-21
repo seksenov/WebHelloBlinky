@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
 	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
-    document.getElementById("unload").addEventListener("click",unload);
     document.getElementById("web-on-pi-home").addEventListener("click",goHome);
 	$( "#slider" ).slider();
 })
@@ -16,16 +15,11 @@ pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
 var timed = false;
 var blinkInterval = 500;
 var timeout;
-//var val = $('#slider').slider("option", "value");
 
 function goHome() {
     console.log("GoHome");
-    window.location.href = "webonpi:home";
-}
-
-function unload() {
-    console.log("Closing GPIO");
     pin.close();
+    window.location.href = "webonpi:home";
 }
 
 function flipLed(){
