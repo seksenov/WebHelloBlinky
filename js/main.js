@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
 	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
+    document.getElementById("unload").addEventListener("click",unload);
     document.getElementById("web-on-pi-home").addEventListener("click",goHome);
 	$( "#slider" ).slider();
 })
@@ -20,6 +21,11 @@ var timeout;
 function goHome() {
     console.log("GoHome");
     window.location.href = "webonpi:home";
+}
+
+function unload() {
+    console.log("Closing GPIO");
+    pin.close();
 }
 
 function flipLed(){
