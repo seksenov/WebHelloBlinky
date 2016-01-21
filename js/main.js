@@ -15,13 +15,15 @@ var timed = false;
 var blinkInterval = 500;
 var timeout;
 
+init();
+
 function init() {
+    console.log("Initialize");
     gpioController = Windows.Devices.Gpio.GpioController.getDefault();
-    gpioController.openPin(47);
+    pin = gpioController.openPin(47);
     Windows.Devices.Gpio.GpioPinValue.high;
     pin.write(currentValue);
     pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
-    blinkInterval = 500;
 }
 
 function goHome() {
