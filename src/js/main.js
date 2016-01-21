@@ -3,22 +3,32 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("blinkB").addEventListener("click",flipLed);
 	document.getElementById("bkinkT").addEventListener("click",setBlinkTime);
 	document.getElementById("reload").addEventListener("click",reload);
+    document.getElementById("initB").addEventListener("click",init);
     document.getElementById("web-on-pi-home").addEventListener("click",goHome);
 	$( "#slider" ).slider();
 })
 
-var gpioController = Windows.Devices.Gpio.GpioController.getDefault();
-var pin = gpioController.openPin(47);
-var currentValue = Windows.Devices.Gpio.GpioPinValue.high;
-pin.write(currentValue);
-pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
+var gpioController;
+var pin;
+var currentValue;
 var timed = false;
 var blinkInterval = 500;
 var timeout;
 
+function init() {
+    gpioController = Windows.Devices.Gpio.GpioController.getDefault();
+    gpioController.openPin(47);
+    Windows.Devices.Gpio.GpioPinValue.high;
+    pin.write(currentValue);
+    pin.setDriveMode(Windows.Devices.Gpio.GpioPinDriveMode.output);
+    blinkInterval = 500;
+}
+
 function goHome() {
     console.log("GoHome");
-    pin.close();
+    if(pin) {
+      pin.close();  
+    }
     window.location.href = "webonpi:home";
 }
 
